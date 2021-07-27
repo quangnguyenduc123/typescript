@@ -21,12 +21,15 @@ type Numeric = number | boolean
 
 type Universal = Combinable & Numeric
 
+function add(a: number, b: number): number // overload
 function add(a: Combinable, b: Combinable) {
     if (typeof a === 'string' || typeof b === 'string') { // cant use && coz TS doesnt know that either a or b is string so use || or if else
         return a.toString() + b.toString();
     }
     return a + b
 }
+
+
 
 type UnknownEmployee = Employee | Admin;
 
@@ -84,3 +87,19 @@ const errorBag: ErrorContainer = {
     username: 'must have Upper case'
     // add more whatever u want
 }
+
+//Optional chainings
+const fetchedUser = {
+    name: 'Quang',
+    year: '1.5',
+    job: { title: 'Janitor', desciption: 'Clean house' }
+}
+
+//console.log(fetchedUser.job.title) => in case job doesnt exist => error => use optional
+console.log(fetchedUser?.job?.title)
+
+
+//Nullish 
+const userInput = ''
+const storedData = userInput || 'DEFAULT' // it's check based on falsy value
+const storeData1 = userInput ?? 'DEFAULT' // it only checks null or undefined not empty string, zero or whatever

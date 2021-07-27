@@ -1,0 +1,18 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "module": "system",
+        "target": "ES6",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "allowUnreachableCode": false,
+        "noEmitOnError": true,
+        "strictNullChecks": true,
+        "outDir": "./dist",
+        "rootDir": "./src",
+        "sourceMap": true
+    },
+    "exclude": [
+        "src/basic.ts"
+    ]
+}
